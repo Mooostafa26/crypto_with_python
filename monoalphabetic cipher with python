@@ -1,0 +1,10 @@
+letter=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+key=["q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","j","k","l","z","x","c","v","v","b","n","m"]
+text=str(input("enter the text")).lower()
+cipher=[]
+for l in text:
+    key_number = letter.index(l)
+    new_letter = key[key_number]
+    cipher.append(new_letter)
+x ="".join(cipher) 
+print(x)  
