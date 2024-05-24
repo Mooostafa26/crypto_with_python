@@ -1,0 +1,30 @@
+from caesar import bruteforce
+
+#input
+
+alphabet = "abcdefghijklmnopqrstuvwxyz"
+
+#process
+
+def encrypt(palintext: str, key: int):
+    ciphertext = ""
+    for i in palintext:
+        ciphertext += alphabet[(alphabet.index(i) + key) % 26]
+    return ciphertext
+
+
+def decrypt(ciphertext: str, key: int):
+    palintext = ""
+    for l in ciphertext:
+        palintext += alphabet[(alphabet.index(l) - key) % 26]
+    return palintext
+
+def bruteforce(ciphertext: str):
+   for key in range(1, 26):
+       print(f"{key} : {decrypt(ciphertext, key)}")
+
+#output
+
+ciphertext = "tvzahmh"
+print("Brute Force Decryption:")
+bruteforce(ciphertext)
