@@ -1,0 +1,26 @@
+#input
+
+palintext = str(input("Enter the plaintext: "))
+key = int(input("Enter the key: "))
+alphabet = "abcdefghijklmnopqrstuvwxyz"
+
+#process
+
+def encrypt(palintext: str, key: int):
+    ciphertext = ""
+    for i in palintext:
+        ciphertext += alphabet[(alphabet.index(i) + key) % 26]
+    return ciphertext
+
+
+def decrypt(ciphertext: str, key: int):
+    palintext = ""
+    for l in ciphertext:
+        palintext += alphabet[(alphabet.index(l) - key) % 26]
+    return palintext
+#output
+
+ciphertext = encrypt(palintext, key)
+decrypted_text = decrypt(ciphertext, key)
+print("Caesar Encryption")
+print(f"Plaintext: {palintext}\nCiphertext: {ciphertext}\nDecrypted: {decrypted_text}")
